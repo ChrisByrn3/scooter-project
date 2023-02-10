@@ -39,28 +39,33 @@ describe('scooter methods', () => {
   const scooter3 = new Scooter("Tricket Lane")
   const scooter4 = new Scooter("Blake Lane")
   const scooter5 = new Scooter("Moss Lane")
+  const scooter6 = new Scooter("")
 
 test("check rent charge error", () => {
   scooter3.charge = 19;
-  Scooter.rent(scooter3)
-  expect(Scooter.rent).toThrow("Scooter needs to charge");
+  scooter3.rent()
+  expect(scooter3.rent).toThrow("Scooter needs to charge");
 }
 )
 test("check rent isBroken error", () => {
   scooter4.isBroken = true
-  Scooter.rent(scooter4)
-  expect(Scooter).toThrow("Scooter needs repair")
+  scooter4.rent()
+  expect(scooter4.rent).toThrow("Scooter needs repair")
 })
 test("check rent check out", () => {
 scooter5.isBroken = false
 scooter5.charge = 100
-Scooter.rent(scooter5)
+scooter5.rent()
 expect(scooter5.user).toBe(User)
 expect(scooter5.station).toBe(null)
 }
 )
   //rent method
-
+test("check dock scooter returned to station", () => {
+  scooter6.dock("Mere Lane");
+  expect(scooter6.station).toBe("Mere Lane")
+  expect(scooter6.user).toBe(null)
+})
   //dock method
 
   //requestRepair method
