@@ -4,13 +4,13 @@ const User = require('../src/User')
 //typeof scooter === object
 describe('scooter properties tests', () => {
   
-  const scooter = new Scooter("Mere Lane");
+  const scooter = new Scooter("Mere Lane", "Chris", 100, false);
 
   test('instance properties', () => {
     expect(typeof scooter.user).toBe("string");
     expect(scooter).toHaveProperty("serial");
     expect(scooter).toHaveProperty("charge");
-    expect(typeof scooter.isBroken).toBe("Boolean")
+    expect(typeof scooter.isBroken).toBe("boolean")
     expect(scooter.station).toBe("Mere Lane")
   }
 )
@@ -67,7 +67,6 @@ test("check dock scooter returned to station", () => {
   expect(scooter6.user).toBe(null)
 })
   //dock method
-
   //requestRepair method
 
   //charge method
