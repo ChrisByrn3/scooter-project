@@ -1,6 +1,7 @@
 const Scooter = require('../src/Scooter')
 const User = require('../src/User')
 
+
 //typeof scooter === object
 describe('scooter properties tests', () => {
   
@@ -14,13 +15,14 @@ describe('scooter properties tests', () => {
     expect(scooter.station).toBe("Mere Lane")
   }
 )
+}
+)
 
 test('check nextSerial is incrementing', () => {
- 
-  const scooter2 = new Scooter("Ash Road");
+  const scooter = new Scooter()
+  const scooter2 = new Scooter();
 
   expect(scooter2.serial).toBe(scooter.serial +1);
-})
 })
 
 

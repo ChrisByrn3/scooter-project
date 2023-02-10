@@ -6,9 +6,10 @@ class Scooter{
   this.serial = Scooter.nextSerial++;
   this.charge = charge;
   this.isBroken = isBroken;
-
-
 }
+
+
+
 }
 
 module.exports = Scooter
