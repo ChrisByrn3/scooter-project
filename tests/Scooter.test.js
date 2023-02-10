@@ -36,6 +36,29 @@ test('check nextSerial is incrementing', () => {
 describe('scooter methods', () => {
   // tests here!
 
+  const scooter3 = new Scooter("Tricket Lane")
+  const scooter4 = new Scooter("Blake Lane")
+  const scooter5 = new Scooter("Moss Lane")
+
+test("check rent charge error", () => {
+  scooter3.charge = 19;
+  Scooter.rent(scooter3)
+  expect(Scooter.rent).toThrow("Scooter needs to charge");
+}
+)
+test("check rent isBroken error", () => {
+  scooter4.isBroken = true
+  Scooter.rent(scooter4)
+  expect(Scooter).toThrow("Scooter needs repair")
+})
+test("check rent check out", () => {
+scooter5.isBroken = false
+scooter5.charge = 100
+Scooter.rent(scooter5)
+expect(scooter5.user).toBe(User)
+expect(scooter5.station).toBe(null)
+}
+)
   //rent method
 
   //dock method
