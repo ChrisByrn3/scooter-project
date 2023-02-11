@@ -3,8 +3,9 @@ const User = require('../src/User')
 // User tests here
 describe('user properties tests', () => {
   
-    const user = new User("Chris", "123Password", 40, true);
-  
+    const user = new User("Chris", "123Password", 40);
+  user.loggedIn = true;
+
     test('instance properties', () => {
       expect(user).toHaveProperty("username");
       expect(user).toHaveProperty("password");
@@ -17,12 +18,14 @@ describe('user properties tests', () => {
 
   describe('user method checks', () => {
 
+    const user = new User();
+
     test('login method test', () => {
-expect(login(user).user.loggedIn).toBe(true)
+expect(user.login(user).user.loggedIn).toBe(true)
     })
 
     test('logout method test', () => {
-        expect(logout(user).user.loggedIn).toBe(false)
+        expect(user.logout(user).user.loggedIn).toBe(false)
             })
   })
 
