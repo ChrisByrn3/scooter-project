@@ -8,7 +8,16 @@ class Scooter{
   this.isBroken = isBroken;
 }
 
-
+rent(){
+  if (this.charge < 20){
+    throw ("Scooter needs to charge")
+  }
+  if(this.isBroken === true){
+    throw ("Scooter needs repair")
+  }
+  this.user.push(user)
+  this.station = null
+}
 
 }
 

@@ -38,15 +38,16 @@ test('check nextSerial is incrementing', () => {
 describe('scooter methods', () => {
   // tests here!
 
-  const scooter3 = new Scooter("Tricket Lane")
-  const scooter4 = new Scooter("Blake Lane")
-  const scooter5 = new Scooter("Moss Lane")
-  const scooter6 = new Scooter("")
+  // const scooter3 = new Scooter("Tricket Lane");
+  const scooter4 = new Scooter("Blake Lane");
+  const scooter5 = new Scooter("Moss Lane", "Chris", 100, false);
+  const scooter6 = new Scooter("");
 
-test("check rent charge error", () => {
+ test('check rent charge error', () => {
+  const scooter3 = new Scooter("Tricket Lane");
   scooter3.charge = 19;
   scooter3.rent()
-  expect(scooter3.rent).toThrow("Scooter needs to charge");
+  expect(scooter3.rent()).toThrow("Scooter needs to charge");
 }
 )
 test("check rent isBroken error", () => {
@@ -55,8 +56,9 @@ test("check rent isBroken error", () => {
   expect(scooter4.rent).toThrow("Scooter needs repair")
 })
 test("check rent check out", () => {
-scooter5.isBroken = false
-scooter5.charge = 100
+// scooter5.isBroken = false
+// scooter5.charge = 100
+const scooter5 = new Scooter("Moss Lane", "Chris", 100, false);
 scooter5.rent()
 expect(scooter5.user).toBe(User)
 expect(scooter5.station).toBe(null)
